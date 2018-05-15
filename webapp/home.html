@@ -1,0 +1,68 @@
+<div class="scrollable">
+	<div class="scrollable-content">
+		<div class="list-group text-center">
+			<!-- cục giới thiệu -->
+			<div class="list-group-item list-group-item-home">
+				<h1>Điều Khiển Tưới Bưởi Tự Động <small></small></h1>
+				<h1>Lê Hoàng Phúc - DH14TD<small></small></h1>
+				
+			</div>
+			
+			<!-- Cục đọc cảm biến -->
+			<div class="list-group-item list-group-item-home">
+				<div>
+					<i class="fa fa-gamepad feature-icon text-primary"></i>
+				</div>
+				<div>
+				<h3 class="home-heading" style="color:red;background-color:black;font-size:200%;">ĐỌC CẢM BIẾN</h3>
+						<div style="background-color:white;font-size:120%;">
+					<h3 class="home-heading">Cảm biến mưa</h3>
+					Kết quả: {{CamBienMua}}
+					<br><span style="color:blue"><b> Độ ẩm:</b></span><b> {{DoAm}}</b> (%)<br>
+				</div>
+			</div>
+			<!-- Cục trạng thài thiết bị -->
+			<div class="list-group-item list-group-item-home">
+				<div>
+					<i class="fa fa-tachometer feature-icon  text-primary"></i>
+				</div>
+				<div>
+					<h3 class="home-heading" style="color:red;background-color:black;font-size:200%;">TRẠNG THÁI THIẾT BỊ</h3>
+						<div style="background-color: green;font-size:120%;">
+						<br><span style="color:black;"><b> BƠM:</b></span><span style="color:black;"><i>{{BOM}}</i></span><br>
+						</div>
+				</div>
+			</div>
+			
+			<!-- Cục chọn chế độ -->
+			
+			<div class="list-group-item list-group-item-home">
+				<div>
+					<i class="fa fa-tachometer feature-icon  text-primary"></i>
+				</div>
+				<h3 class="home-heading" style="color:red;background-color:black;font-size:200%;">CHỌN CHẾ ÐỘ</h3>
+				<div ng-app="" style="background-color: green;font-size:120%;">
+					<form>
+						<input type="radio" ng-model="myVar" value="auto"><span style="color:black;"><b>AUTO</b></span>
+						<input type="radio" ng-model="myVar" value="tay"><span style="color:black;"><b>TAY</b></span>
+					</form>
+					<div ng-switch="myVar">
+						<div ng-switch-when="auto">
+						<h3 class="home-heading" style="background-color:black;color:white">CHẾ ĐỘ AUTO</h3>
+						<br><span style="color:black;"><b>Set Ðộ ẩm đất:</b></span> <input type="text" class="input text" ng-model="set[2]" ng-change="SETCAMBIEN()" /><br>
+						<br><button class="button" style="background-color:white;color:blue" ng-click="auto()">
+							<strong>Nhấn vô đây để chay auto<strong>
+							</button><br>
+						</div>
+						<div ng-switch-when="tay">
+						<h3 class="home-heading" style="background-color:black;color:white">CHẾ ÐỘ TAY</h3>
+						<span style="color:black;"><b>BƠM</b></span> <input type="checkbox" ng-true-value="1" ng-false-value="0" ng-change="BATTHIETBI_H()" ng-model="thietbi_status[2]" />
+						</div>
+					</div>
+				</div>
+			</div>
+			</video>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/Dne8NsRqPRo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+		</div>
+	</div>
+</div>
